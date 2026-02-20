@@ -30,7 +30,6 @@ fun obtenerGrado(grafo: Grafo<String>, inicio: String, fin: String): Int {
 }
 
 fun main(args: Array<String>) {
-    // Validación de argumentos
     if (args.size < 2) {
         println("Por favor ingrese dos nombres.")
         return
@@ -43,7 +42,7 @@ fun main(args: Array<String>) {
     val archivo = File("input.txt")
     if (archivo.exists()) {
         archivo.forEachLine { linea ->
-            val partes = linea.trim().split(" ")
+            val partes = linea.trim().split("\\s+".toRegex())
             if (partes.size >= 2) {
                 val p1 = partes[0]
                 val p2 = partes[1]
